@@ -22,8 +22,8 @@
                 </div>
             </nav>
             <main>
-                <h1>Guitarras</h1>
                 <section class="guitar" id="guitarId">
+                    
                     <article class="guitar-item">
                         <img src="./assets/img/fender_jaguar.jpeg" alt="">
                         <p>Fender Jaguar</p>
@@ -55,20 +55,30 @@
                         <a href="#">Ver mas ...</a>
                     </article>
                 </section>
-               <!--  <section class="contact" id="contactId">
-                    <h2></h2>
-                    <form action="">
-                        <label for="txtemail"></label>
-                        <input type="text" name="txtemail" id="txtemail">
-                        <label for="txtarea"></label>
-                        <textarea name="txtarea" id="txtarea" cols="30" rows="10"></textarea>
-                        <button type="submit">Enviar Cometarios</button>
-                    </form>
-                </section> -->
+               <section class="contact" id="contactId">
+                    <form class="my-3 colorfondo" action="">
+                        <h2>Contacto</h2>
+                        <div class="input-group">
+                          <label for="name">Nombre</label>
+                          <input type="text" name="name" id="name" placeholder="Nombre" />
+                          <label for="email">Email</label>
+                          <input type="text" name="email" id="email" placeholder="Email" />
+                          <label for="message">Mensaje</label>
+                          <textarea
+                            name="message"
+                            id="message"
+                            cols="30"
+                            rows="10"
+                            placeholder="Mensaje"
+                          ></textarea>
+                          <input class="btn" type="button" value="Enviar" />
+                        </div>
+                      </form>
+                </section> 
             </main>
             <footer class="footer">
                 <section class="footer-icon">
-                    <i class="fa-brands fa-facebook"></i>
+                    <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-linkedin"></i>
                 </section>
