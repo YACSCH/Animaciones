@@ -36,6 +36,7 @@ nav {
 
 .nav-logo img {
   width: 50px;
+  animation: rotation 8s infinite linear;
 }
 .nav-logo span {
   font-size: 20px;
@@ -44,6 +45,10 @@ nav {
 }
 .menu-list-item {
   text-decoration: none;
+  transition: transform 1s;
+}
+.menu-list-item:hover {
+  transform: scale(1.5);
 }
 main {
   grid-area: main;
@@ -231,9 +236,16 @@ textarea::placeholder {
 @keyframes  CardOpacity {
   0%{
       opacity: 0;
-      
   }
   100%{
       opacity: 1;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
