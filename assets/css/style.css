@@ -29,7 +29,7 @@ nav {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   color: whitesmoke;
   background-color: #E57C23;
 }
@@ -40,6 +40,7 @@ nav {
 .nav-logo span {
   font-size: 20px;
   font-weight: 600;
+  animation: navLogoRight 2s ease forwards;
 }
 .menu-list-item {
   text-decoration: none;
@@ -49,7 +50,11 @@ main {
   display: flex;
   flex-direction: column;
 }
-main h1 {
+main .titles {
+  background-color: #025464;
+  color:#F8F1F1;
+  font-size: 30px;
+  font-weight: 600;
   text-align: center;
   padding-left: 15px;
 }
@@ -61,19 +66,27 @@ main h1 {
   margin: 15px;
   border: 1px solid #eae3e3;
   box-shadow: 1px 1px 10px 1px #b4c1d1;
+  animation: CardOpacity 2s ease forwards;
 }
 .guitar-item img {
   width: 60%;
   padding-top: 10px;
-  transition: opacity 0.3s ease;
+  /* transition: opacity 0.5s ease; */
+  transition: filter 0.3s; 
+  filter: grayscale(100%); 
  }
  .guitar-item:hover img {
-  opacity: 0.7;
+  filter: grayscale(0%);
+  /* opacity: 0.7; */
 }
 .guitar-item p {
   color: #444;
   font-size: 22px;
   padding: 10px 20px;
+  transition: opacity 0.3s ease;
+}
+.guitar-item:hover p {
+  opacity: 1;
 }
 .guitar-item a {
     text-decoration: none;
@@ -164,7 +177,7 @@ textarea::placeholder {
         grid-template-columns: 20% 80%;
         grid-template-areas: "nav main" 
                              "nav contact" 
-                             "nav footer";
+                             "footer footer";
                              
     }
     nav {
@@ -200,3 +213,27 @@ textarea::placeholder {
      margin-top: auto;
     }
 } 
+@keyframes  navLogoRight {
+  0%{
+      transform: translateX(-200px);
+      opacity: 0;
+  }
+  50%{
+    transform: translateX(-200px);
+    opacity: 0.5;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes  CardOpacity {
+  0%{
+      opacity: 0;
+      
+  }
+  100%{
+      opacity: 1;
+  }
+}
