@@ -41,7 +41,7 @@ nav {
 .nav-logo span {
   font-size: 20px;
   font-weight: 600;
-  animation: navLogoRight 2s ease forwards;
+  animation: navLogoRight 3s ease forwards;
 }
 .menu-list-item {
   text-decoration: none;
@@ -71,43 +71,51 @@ main .titles {
   margin: 15px;
   border: 1px solid #eae3e3;
   box-shadow: 1px 1px 10px 1px #b4c1d1;
-  animation: CardOpacity 2s ease forwards;
+  animation: CardOpacity 4s ease forwards;
 }
 .guitar-item img {
   width: 60%;
+  height: 90%;
   padding-top: 10px;
-  /* transition: opacity 0.5s ease; */
   transition: filter 0.3s; 
   filter: grayscale(100%); 
  }
  .guitar-item:hover img {
   filter: grayscale(0%);
-  /* opacity: 0.7; */
+
 }
 .guitar-item p {
   color: #444;
   font-size: 22px;
-  padding: 10px 20px;
-  transition: opacity 0.3s ease;
+  padding: 10px;
+  transition: transform 1s;
 }
 .guitar-item:hover p {
-  opacity: 1;
+  transform: scale(1.2);
 }
 .guitar-item a {
     text-decoration: none;
     background-color: #0367a6;
-    border: 1px solid #0367a6;
+    border: 1px solid transparent;
     color: whitesmoke;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
+    transition: background-color 0.3s ease-out;
 }
+.guitar-item a:hover {
+  background-color: rgb(255, 140, 0);
+} 
 .contact {
   grid-area: contact;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 20px;
+  transition: .5s;
+  opacity: 0;
+  animation: contactTop 1s ease forwards;
+  animation-delay: 1s;
 }
 form {
   padding: 10px 10px;
@@ -220,14 +228,10 @@ textarea::placeholder {
 } 
 @keyframes  navLogoRight {
   0%{
-      transform: translateX(-200px);
+      transform: translateX(-300px);
       opacity: 0;
   }
-  50%{
-    transform: translateX(-200px);
-    opacity: 0.5;
-  }
-  100%{
+ 100%{
       transform: translateX(0);
       opacity: 1;
   }
@@ -247,5 +251,15 @@ textarea::placeholder {
   }
   to {
     transform: rotate(359deg);
+  }
+}
+@keyframes  contactTop {
+  0%{
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
   }
 }
